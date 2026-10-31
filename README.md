@@ -1,29 +1,36 @@
-# Welcome to your Lovable project
+# Vinay Marabe — Portfolio
 
-This project was built with [Lovable](https://lovable.dev).
+A React + TypeScript portfolio built with TanStack Start and Tailwind CSS.
 
-## Build with Lovable
+## Local development
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
+npm install
 npm run dev
 ```
 
-## Built with
+## Portfolio companion (Byte)
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+The floating companion includes two modes:
+
+- **Guided tour:** navigates visitors through Home, About, Skills, Projects, Experience, and Contact.
+- **Ask Byte:** answers portfolio questions using a server-side Gemini endpoint. If Gemini is not configured or unavailable, the UI falls back to curated local portfolio answers.
+
+To enable live AI answers, copy `.env.example` to `.env` and set:
+
+```env
+GEMINI_API_KEY=your_server_side_gemini_api_key
+GEMINI_MODEL=gemini-2.5-flash
+```
+
+Never prefix the key with `VITE_` or expose it in client-side code. Configure the same variables as encrypted secrets in your hosting provider for production. The chat endpoint is `POST /api/portfolio-chat`.
+
+## Custom avatar asset
+
+The current mascot is a lightweight SVG placeholder so the tour and chat can be integrated independently of the avatar artwork. To replace it with the animated avatar runtime from [Bible Strong Avatar Lab](https://github.com/smontlouis/bible-strong-avatar-lab), export the mascot definition as a `.avatar.json` file and add it to the app. The runtime package and avatar definition are intentionally not bundled until that export is available.
+
+## Production notes
+
+- Run `npm run lint` and `npm run build` before deployment.
+- Add server-side rate limiting and usage controls to the chat endpoint before exposing a paid Gemini key publicly.
+- Keep the avatar runtime's license and attribution notices when adding it.
