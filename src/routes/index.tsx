@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { PortfolioCompanion } from "@/components/PortfolioCompanion";
 import resumeAsset from "@/assets/vinay-marabe-resume.pdf.asset.json";
 import sponsorshipAsset from "@/assets/vinay-asd-sponsorship-letter.png.asset.json";
 
@@ -290,6 +291,7 @@ function Portfolio() {
 
       {activeProject && <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} onLetter={() => setLetterOpen(true)} />}
       {letterOpen && <LetterViewer onClose={() => setLetterOpen(false)} />}
+      <PortfolioCompanion />
     </div>
   );
 }
