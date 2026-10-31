@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { ArrowRight, Bot, ChevronLeft, ChevronRight, MessageCircle, Send, Sparkles, X } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, MessageCircle, Send, Sparkles, X } from "lucide-react";
 
 type TourStop = { id: string; title: string; message: string };
 type ChatMessage = { role: "user" | "assistant"; content: string };
